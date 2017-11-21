@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceModelData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Guid>76f46b4f-1849-4927-9da2-6c349430f349</Guid>
+  <Version>0.9.0.0</Version>
+  <ServiceModelList>
+    <ServiceModel>	
+      <Name>AOSService</Name>
+      <SelectedForUpdate>true</SelectedForUpdate>
+      <ContainDatabase>true</ContainDatabase>
+      <DependentServiceModelList />
+      <StagingPreprocessingScript>
+        <FileName>CreateAOSStagingEnv.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>staging preprocessing for AOSService</Description>
+      </StagingPreprocessingScript>
+      <StagingUpdateScript>
+        <FileName>SwapAOSStagingEnv.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Swap the staging and current env of AOSService</Description>
+      </StagingUpdateScript>
+      <StagingRestoreScript>
+        <FileName>RestoreAOSStagingEnv.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Swap the backup env with the current env of AOSService</Description>
+      </StagingRestoreScript>      
+      <StopScript>
+        <FileName>AutoStopAOS.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Stop AOS service and Batch service</Description>
+      </StopScript>
+      <BackupScript>
+        <FileName>AutoBackupAOSService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>backup AOS service</Description>
+      </BackupScript>
+      <RestoreScript>
+        <FileName>AutoRestoreAOSService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>restore AOS service</Description>
+      </RestoreScript>
+      <UpdateScript>
+        <FileName>AutoUpdateAOSService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>update AOS service</Description>
+        <InvokeWithPowershellProcess>false</InvokeWithPowershellProcess>
+      </UpdateScript>
+      <GlobalUpdateConfigScript>
+        <FileName>AutoImportLicense.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Import AX license file</Description>
+      </GlobalUpdateConfigScript>
+      <GlobalBackupScript>
+        <FileName>AutoBackupDB.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Please backup your ax database now, set this step to complete once you finished backup</Description>
+      </GlobalBackupScript>
+      <GlobalRestoreScript>
+	<FileName>ManualRestoreStep.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Please restore your ax database now, set this step to complete once you finished restore</Description>
+      </GlobalRestoreScript>
+      <GlobalUpdateScript>
+        <FileName>AutoDeployReportAndSyncDB.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Sync AX database</Description>
+      </GlobalUpdateScript>
+      <StartScript>
+        <FileName>AutoStartAOS.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Start AOS service and Batch service</Description>
+      </StartScript>
+    </ServiceModel>
+    <ServiceModel>
+      <Name>DIXFService</Name>
+      <SelectedForUpdate>false</SelectedForUpdate>      
+      <DependentServiceModelList>
+        <string>AOSService</string>
+      </DependentServiceModelList>
+      <StopScript>
+        <FileName>AutoStopDIXFService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Stop DIXF SSIS service</Description>
+      </StopScript>
+      <StartScript>
+        <FileName>AutoStartDIXFService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Start DIXF service</Description>
+      </StartScript>
+    </ServiceModel>
+    <ServiceModel>
+      <Name>MRProcessService</Name>
+      <SelectedForUpdate>false</SelectedForUpdate>
+      <ContainDatabase>false</ContainDatabase>
+      <DependentServiceModelList>
+        <string>AOSService</string>
+        <string>MRApplicationService</string>
+      </DependentServiceModelList>
+      <StopScript>
+        <FileName>Update\AutoStopMRProcessService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Stop the financial reporting process service</Description>
+      </StopScript>
+      <StartScript>
+        <FileName>Update\AutoStartMRProcessService.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Start the financial reporting process service</Description>
+      </StartScript>
+      <DVTScript>
+        <FileName />
+        <Automated>false</Automated>
+        <Description />
+      </DVTScript>
+    </ServiceModel>
+	<ServiceModel>
+      <Name>MROneBox</Name>
+      <SelectedForUpdate>false</SelectedForUpdate>
+      <ContainDatabase>true</ContainDatabase>
+      <DependentServiceModelList>
+        <string>AOSService</string>
+      </DependentServiceModelList>
+      <StopScript>
+        <FileName>Update\AutoStopMROneBox.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Stop the financial reporting services</Description>
+      </StopScript>
+      <StartScript>
+        <FileName>Update\AutoStartMROneBox.ps1</FileName>
+        <Automated>true</Automated>
+        <Description>Start the financial reporting services</Description>
+      </StartScript>
+      <DVTScript>
+        <FileName />
+        <Automated>false</Automated>
+        <Description />
+      </DVTScript>
+    </ServiceModel>
+  </ServiceModelList>
+</ServiceModelData>
