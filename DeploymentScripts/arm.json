@@ -19,7 +19,7 @@
             "metadata": {
                 "description": "Provide strings for custom citizen Environment creation."
             }
-        }
+        }    
     },
     "variables": {
         "deploymentUris": {

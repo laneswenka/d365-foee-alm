@@ -7,7 +7,7 @@
             "steps": [
                 {
                     "name": "powerp",
-                    "label": "FinOps Setup",
+                    "label": "Deployment Setup",
                     "subLabel": {},
                     "bladeTitle": "powerp",
                     "elements": [
@@ -956,20 +956,6 @@
                                                     }
                                                 ],
                                                 "required": true
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "id": "ppRbac",
-                                        "header": "Assign RBAC",
-                                        "width": "2fr",
-                                        "filter": true,
-                                        "multiLine": true,
-                                        "element": {
-                                            "type": "Microsoft.Common.DropDown",
-                                            "constraints": {
-                                                "required": true,
-                                                "allowedValues": "[coalesce(steps('landingZones').callGraph.transformed.list, parse('[]'))]"
                                             }
                                         }
                                     }
