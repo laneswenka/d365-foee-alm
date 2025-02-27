@@ -59,7 +59,7 @@
                         {
                             "type": "Microsoft.Resources/deploymentScripts",
                             "apiVersion": "2020-10-01",
-                            "name": "[concat(parameters('rgName'), '-ppNorthStar')]",
+                            "name": "[concat(variables('rgName'), '-ppNorthStar')]",
                             "location": "[parameters('location')]",
                             "kind": "AzurePowerShell",
                             "identity": {
