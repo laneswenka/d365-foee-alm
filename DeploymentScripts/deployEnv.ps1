@@ -34,7 +34,7 @@ param (
     [Parameter(Mandatory = $false)][string][AllowEmptyString()][AllowNull()]$PPCitizenDescription,
     [Parameter(Mandatory = $false)][string][AllowEmptyString()][AllowNull()]$PPCitizenCurrency,
     [Parameter(Mandatory = $false)][string][AllowEmptyString()][AllowNull()]$PPCitizenLanguage,
-    [Parameter(Mandatory = $false)]$PPCitizenConfiguration,
+    [Parameter(Mandatory = $false)]$finOpsEnv,
     [Parameter(Mandatory = $false)][string][AllowEmptyString()][AllowNull()]$PPPro,
     [Parameter(Mandatory = $false)][string][AllowEmptyString()][AllowNull()]$PPProCount,
     [Parameter(Mandatory = $false)][string][AllowEmptyString()][AllowNull()]$PPProNaming,
