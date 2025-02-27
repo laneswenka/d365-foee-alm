@@ -74,6 +74,9 @@
                     },
                     "finOpsEnv": {
                         "value": "[if(empty(parameters('finOpsEnv')), variables('emptyString'), parameters('finOpsEnv'))]"
+                    },
+                    "location": {
+                        "value": "[parameters('location')]"
                     }
                 }
             }
