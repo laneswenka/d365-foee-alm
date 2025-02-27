@@ -28,10 +28,9 @@
             "aadDiagnosticsTemplateUri": "[uri(deployment().properties.templateLink.uri, 'auxiliary/azureMonitor/aadDiagnostics.json')]",
             "dataLakeTemplateUri": "[uri(deployment().properties.templateLink.uri, 'auxiliary/azureMonitor/storageAccountV2.json')]",
             "securityTemplateUri": "[uri(deployment().properties.templateLink.uri, 'auxiliary/azureMonitor/security.json')]",
-            "northStarTemplateUri": "[uri(deployment().properties.templateLink.uri, 'auxiliary/powerPlatform/ppDeploymentScript.json')]"
+            "northStarTemplateUri": "[uri(deployment().properties.templateLink.uri, 'deploymentScript.json')]"
         },
         "deploymentNamePrefix": "[concat(replace(tenant().displayName, ' ', ''), '-')]",
-        "deploymentNameSuffix": "[concat('-', deployment().location, guid(parameters('ppAdminEnvNaming')))]",
         "deploymentNames": {
             "ppRegistrationDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-RP-Billing', variables('deploymentNameSuffix')), 64)]",
             "logAnalyticsDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-Azure-Monitoring', variables('deploymentNameSuffix')), 64)]",
