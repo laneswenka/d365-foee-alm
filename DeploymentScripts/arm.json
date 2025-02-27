@@ -19,7 +19,14 @@
             "metadata": {
                 "description": "Provide strings for custom citizen Environment creation."
             }
-        }    
+        }    ,
+        "location": {
+            "type": "string",
+            "defaultValue": "[deployment().location]",
+            "metadata": {
+                "description": "Provide the Azure location for the deployments"
+            }
+        }
     },
     "variables": {
         "deploymentUris": {
