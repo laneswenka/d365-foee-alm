@@ -13,7 +13,7 @@
                 "description": "Provide the resourceId of the User Managed Identity."
             }
         },
-        "ppFinOpsEnv": {
+        "finOpsEnv": {
             "type": "string",
             "defaulValue": "",
             "metadata": {
