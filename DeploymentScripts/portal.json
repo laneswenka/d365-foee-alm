@@ -983,7 +983,7 @@
         "outputs": {
             "parameters": {
                 "finOpsIdentity": "[steps('powerp').finOpsIdentity.id]",
-                "ppCitizenConfiguration": "[replace(replace(replace(replace(replace(string(steps('landingZones').finOpsEnv), '{', ''), '}', ''), '\"', ''), '[', ''), ']', '')]"
+                "finOpsEnv": "[replace(replace(replace(replace(replace(string(steps('landingZones').finOpsEnv), '{', ''), '}', ''), '\"', ''), '[', ''), ']', '')]"
             },
             "kind": "Subscription",
             "location": "[steps('powerp').locationName]",
