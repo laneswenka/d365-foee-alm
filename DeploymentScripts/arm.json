@@ -31,14 +31,6 @@
             "northStarTemplateUri": "[uri(deployment().properties.templateLink.uri, 'deploymentScript.json')]"
         },
         "deploymentNamePrefix": "[concat(replace(tenant().displayName, ' ', ''), '-')]",
-        "deploymentNames": {
-            "ppRegistrationDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-RP-Billing', variables('deploymentNameSuffix')), 64)]",
-            "logAnalyticsDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-Azure-Monitoring', variables('deploymentNameSuffix')), 64)]",
-            "aadDiagnosticsDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-Star-AAD-Logs', variables('deploymentNameSuffix')), 64)]",
-            "dataLakeDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-DataLake-Analytics', variables('deploymentNameSuffix')), 64)]",
-            "securityDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-Sentinel', variables('deploymentNameSuffix')), 64)]",
-            "northStarDeploymentName": "[take(concat(variables('deploymentNamePrefix'), 'PPLZ-Setup', variables('deploymentNameSuffix')), 64)]"
-        },
         "resourceNamePrefix": "PPLZ",
         "rgNames": {
             "mgmtRg": "[concat(variables('resourceNamePrefix'), '-mgmt-', parameters('location'))]",
