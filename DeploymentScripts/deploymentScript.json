@@ -21,6 +21,12 @@
             "metadata": {
                 "description": "Provide strings for custom citizen Environment creation."
             }
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "Provide the Azure location for the deployments"
+            }
         }
     },
     "variables": {
