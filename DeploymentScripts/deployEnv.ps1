@@ -697,7 +697,6 @@ foreach ($environment in $environmentsToCreate) {
                 LanguageName       = $environment.envLanguage
                 Currency           = $environment.envCurrency
                 SecurityGroupId    = ''
-                SubType          =  $environment.envSubType
                 Templates           = 'D365_FinOps_Finance'
             }
             $null = New-PowerOpsEnvironment @envCreationHt
@@ -708,6 +707,7 @@ foreach ($environment in $environmentsToCreate) {
             }
         }
         catch {
+            $_
             Write-Warning "Failed to create FinOps environment $($environment.envName) "
         }
     }
